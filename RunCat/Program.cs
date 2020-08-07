@@ -46,6 +46,7 @@ namespace RunCat
         public RunCatApplicationContext()
         {
             cpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            _ = cpuUsage.NextValue(); // discards first return value
 
             notifyIcon = new NotifyIcon()
             {
